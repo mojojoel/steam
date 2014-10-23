@@ -5,11 +5,33 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 2.0.0p481
 
-* System dependencies
+* DB - PSQL 9.3
 
-* Configuration
+---TODO---
+Bootstrap
+Devise - Admin
+Buy now?
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * Database creation
 
