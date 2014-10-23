@@ -1,0 +1,58 @@
+<center><h1>Listings</h1></center>
+
+<body>
+    <div id="main-container" class="container-fluid">
+      <div class="row">
+        <div id="left-content" class="col-xs-4">
+          <!-- sidebar content -->
+        </div>
+        <div id="mid-content" class="col-xs-4">
+          
+
+  <!--        <table>
+             <thead>
+              <tr>
+                <th>Name</th>
+                <th>Quality</th>
+                <th>Desc</th>
+                <th>Picture URL</th>
+                <th>Game</th>
+                <th>Price</th>
+                <th>User</th>
+                <th colspan="10"></th>
+              </tr>
+            </thead>           
+
+            <tbody>--><table class='table'>
+              <% @listings.each do |listing| %>
+                <tr><td><%= link_to (image_tag listing.picture, size: '300', alt: listing.name), listing %></td></tr>
+                  <tr align='center'><td><%= listing.name %></td></tr>
+                  <tr align='center'><td><%= listing.game %></td></tr>
+<!--                   <td><%= listing.quality %></td>
+                  <td><%= listing.desc %></td>
+                  <td><%= link_to (image_tag listing.picture), listing %></td> -->
+                  <tr align='center'><td><%= link_to (number_to_currency(listing.price, precision: 2)), edit_listing_path(listing) %></td></tr>
+
+<!--              <td><%= listing.user_id %></td>
+                  <td><%= link_to 'Show', listing %></td>
+                  <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+                  <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+                <!-- </tr> -->
+              <% end %>
+            <!-- </tbody> -->
+          </table>
+        </div>
+
+        <div id="right-content" class="col-xs-4">
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+
+
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path %>

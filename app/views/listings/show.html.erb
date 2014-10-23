@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @listing.name %>
+</p>
+
+<p>
+  <strong>Quality:</strong>
+  <%= @listing.quality %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @listing.desc %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag @listing.picture, size: '500', alt: @listing.name %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @listing.game %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency(@listing.price, precision: 2) %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@listing.user_id).steam_id %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
