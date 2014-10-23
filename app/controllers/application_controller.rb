@@ -9,10 +9,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:nickname, :steam_id, :paypal, :email, :password, :password_confirmation)
+      u.permit(:nickname, :email, :password, :password_confirmation)
     end
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:nickname, :steam_id, :paypal, :email, :password, :password_confirmation, :comment)
+      u.permit(:nickname, :steam_id, :paypal, :email, :password, :password_confirmation, :current_password, :comment)
     end
   end
 end
