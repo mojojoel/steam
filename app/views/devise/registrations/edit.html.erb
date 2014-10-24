@@ -6,29 +6,18 @@
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.label :steam_id %><br />
-  <%= f.text_field :steam_id %></div>
-
-    <div><%= f.label :paypal %><br />
-  <%= f.text_field :paypal %></div>
-
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :new_password %> <i>(leave it blank if you don't want to change it)</i><br />
+  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
-  <div><%= f.label :new_password_confirmation %><br />
+  <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
-
-  <% if current_user.admin? %>
-  <div><%= f.label :comments %><br />
-  <%= f.text_field :comments %></div>
-  <% end %>
 
   <div><%= f.submit "Update" %></div>
 <% end %>
