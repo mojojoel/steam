@@ -8,7 +8,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :game
       t.float :price
       t.integer :user_id
-      t.boolean :approved
+      t.boolean :approved, default: "false"
 
       t.timestamps
     end

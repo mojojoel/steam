@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20141023115422) do
     t.string   "game"
     t.float    "price"
     t.integer  "user_id"
-    t.boolean  "approved"
+    t.boolean  "approved",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

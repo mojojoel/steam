@@ -4,7 +4,11 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    if current_user.admin?
+      @listings = Listing.all.order('price > 200 and approved = false').reverse
+    else
+      @listings = Listing.where('price < 200.00 or approved = true').order('name')
+    end
   end
 
   # GET /listings/1
@@ -15,7 +19,6 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
-    @user = current_user
   end
 
   # GET /listings/1/edit
@@ -27,7 +30,9 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
-    #@listing.approved = 
+    if current_user.trust == true
+      @listing.approved = true
+    end
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
@@ -42,6 +47,11 @@ class ListingsController < ApplicationController
   # PATCH/PUT /listings/1
   # PATCH/PUT /listings/1.json
   def update
+    # if @listing.price < 3000.00
+    #   @listing.approved = true
+    # else
+    #   @listing.approved = false
+    # end
     respond_to do |format|
       if @listing.update(listing_params)
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
@@ -71,6 +81,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:name, :quality, :desc, :picture, :game, :price, :user_id)
+      params.require(:listing).permit(:name, :quality, :desc, :picture, :game, :price, :user_id, :approved)
     end
 end
