@@ -17,4 +17,4 @@ User.create!(password: '11111111', email: '2@email.com', nickname: 'TWO', steam_
 User.create!(password: '11111111', email: '3@email.com', nickname: 'THREE', steam_id: '3xTHREE', paypal: 'pp3')
 User.create!(password: '11111111', email: '4@email.com', nickname: 'FOUR', steam_id: '4xFOUR', paypal: 'pp4')
 User.create!(password: '11111111', email: '5@email.com', nickname: 'FIVE', steam_id: '5xFIVE', paypal: 'pp5')
-User.create!(password: 'qweqweqwe', email: 'test@admin.com', nickname: 'nicks', steam_id: 'steams', paypal: 'paypals')
+User.create!(password: 'qweqweqwe', email: 'test@admin.com', nickname: 'nicks', steam_id: 'steams', paypal: 'paypals', admin: 'true')

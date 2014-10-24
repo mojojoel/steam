@@ -32,8 +32,10 @@
 
 <p>
   <strong>User:</strong>
-  <%= User.find(@listing.user_id).steam_id %>
+  <%= @listing.user_id %>
+<!--   < User.find(@listing.user_id).steam_id %> -->
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
+

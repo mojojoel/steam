@@ -25,9 +25,13 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
-  <% if current_user == admin_user %>
+  <% if current_user.admin? %>
   <div><%= f.label :comments %><br />
-  <%= f.text_field :comments %></div>
+  <%= f.text_area :comments %></div>
+
+  <div><%= f.label :trust %><br />
+  <%= f.select :trust, ['true', 'false'] %></div>
+
   <% end %>
 
   <div><%= f.submit "Update" %></div>

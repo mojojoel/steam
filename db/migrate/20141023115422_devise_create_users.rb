@@ -34,6 +34,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :steam_id
       t.string :paypal
       t.string :comments
+      t.boolean :admin, default: "false"
+      t.boolean :trust, default: "false"
 
       t.timestamps
     end

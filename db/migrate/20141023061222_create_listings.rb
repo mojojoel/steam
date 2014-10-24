@@ -6,8 +6,9 @@ class CreateListings < ActiveRecord::Migration
       t.text :desc
       t.text :picture
       t.string :game
-      t.decimal :price
+      t.float :price
       t.integer :user_id
+      t.boolean :approved
 
       t.timestamps
     end
