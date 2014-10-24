@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20141024030057) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "nickname"
+    t.string   "steam_id"
+    t.string   "paypal"
+    t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,6 +70,9 @@ ActiveRecord::Schema.define(version: 20141024030057) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["nickname"], name: "index_users_on_nickname", unique: true, using: :btree
+  add_index "users", ["paypal"], name: "index_users_on_paypal", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["steam_id"], name: "index_users_on_steam_id", unique: true, using: :btree
 
 end
