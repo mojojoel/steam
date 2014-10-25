@@ -31,9 +31,8 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @listing.user_id %>
-<!--   < User.find(@listing.user_id).steam_id %> -->
+  <strong>Nickname:</strong>
+  <%= User.find(@listing.user_id).nickname %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
