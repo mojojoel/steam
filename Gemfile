@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pry-rails'
 gem 'will_paginate'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'

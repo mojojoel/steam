@@ -9,9 +9,11 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     if current_user.admin?
-      @listings = Listing.admin_view
+        @listings = Listing.all.paginate(:page => params[:page], :per_page => 2).order('price < 200.00 or approved = true') 
+    #   @listings = Listing.admin_view
     else
-      @listings = Listing.user_view
+        @listings = Listing.where('price < 200.00 or approved = true').paginate(:page => params[:page], :per_page => 2).order('name')
+    #   @listings = Listing.user_view
     end
   end
 
