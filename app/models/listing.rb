@@ -13,4 +13,12 @@ class Listing < ActiveRecord::Base
 	# def self.user_view
 	# 	Listing.where('price < 200.00 or approved = true').order('name')
 	# end
+
+	def self.search(search)
+		if search
+    		where('name ILIKE ?', "%#{search}%")
+ 		else
+    		all
+  		end
+	end
 end

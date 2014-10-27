@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:home]
 
+  respond_to :html,:js 
   def home
 
   end
@@ -9,10 +10,10 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     if current_user.admin?
-        @listings = Listing.all.paginate(:page => params[:page], :per_page => 2).order('price < 200.00 or approved = true') 
+        @listings = Listing.search(params[:search]).paginate(:page => params[:page], :per_page => 5).order('price DESC')
     #   @listings = Listing.admin_view
     else
-        @listings = Listing.where('price < 200.00 or approved = true').paginate(:page => params[:page], :per_page => 2).order('name')
+        @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).paginate(:page => params[:page], :per_page => 2).order('name')
     #   @listings = Listing.user_view
     end
   end
@@ -29,6 +30,10 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
+    if current_user == @listing.user
+      @listing = Listing.find(params[:id])
+    else redirect_to listings_path
+    end
   end
 
   # POST /listings
@@ -53,11 +58,6 @@ class ListingsController < ApplicationController
   # PATCH/PUT /listings/1
   # PATCH/PUT /listings/1.json
   def update
-    # if @listing.price < 3000.00
-    #   @listing.approved = true
-    # else
-    #   @listing.approved = false
-    # end
     respond_to do |format|
       if @listing.update(listing_params)
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
@@ -72,7 +72,9 @@ class ListingsController < ApplicationController
   # DELETE /listings/1
   # DELETE /listings/1.json
   def destroy
-    @listing.destroy
+    if current_user == @listing.user
+      @listing.destroy
+    end
     respond_to do |format|
       format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
       format.json { head :no_content }
