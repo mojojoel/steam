@@ -9,9 +9,9 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     if current_user.admin?
-      @listings = Listing.all.order('price > 200 and approved = false').reverse
+      @listings = Listing.admin_view
     else
-      @listings = Listing.where('price < 200.00 or approved = true').order('name')
+      @listings = Listing.user_view
     end
   end
 
@@ -34,7 +34,7 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
-    if current_user.trust == true
+    if current_user.trust?
       @listing.approved = true
     end
     respond_to do |format|
