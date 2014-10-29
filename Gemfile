@@ -45,9 +45,6 @@ gem 'pg'
 #Devise authentication
 gem 'devise'
 
-#Cancancan for roles
-gem 'cancancan'
-
 #Bootstrap (SASS)
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'

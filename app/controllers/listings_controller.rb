@@ -14,10 +14,8 @@ class ListingsController < ApplicationController
     elsif current_user.admin?
       @listings = Listing.order('price DESC').search(params[:search]).paginate(:page => params[:page])
     elsif (params[:own]) == "true"
-      puts "own"
       @listings = Listing.where(:user => current_user).paginate(:page => params[:page])
     else
-      puts "default"
       @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).paginate(:page => params[:page], :per_page => 9).order('created_at')
     end
   end
