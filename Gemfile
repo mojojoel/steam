@@ -48,3 +48,6 @@ gem 'devise'
 #Bootstrap (SASS)
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+
+#Heroku bundler
+gem 'bundler'

@@ -28,3 +28,8 @@ development:
   adapter: postgresql
   database: steam_development
   host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: steam_development
