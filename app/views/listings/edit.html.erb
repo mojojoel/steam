@@ -1,7 +1,9 @@
-<h1>Editing listing</h1>
+<center><h1>Editing <%= @listing.name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @listing %> |
-<%= link_to 'Back', listings_path %> |
-<%= link_to 'Destroy', @listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+<button type="button" class="btn btn-edit"><%= link_to '<span class="glyphicon glyphicon-list-alt"></span> View this listing'.html_safe, @listing %></button>
+  <% if current_user == @listing.user or current_user.admin? %>
+  <button type="button" class="btn btn-warning"><%= link_to '<span class="glyphicon glyphicon-list"></span> Back to listings'.html_safe, listings_path %></button>
+  <button type="button" class="btn btn-md btn-hover btn-danger"><%= link_to '<span class="glyphicon glyphicon-trash"></span> Destroy'.html_safe, @listing, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  <% end %></center>

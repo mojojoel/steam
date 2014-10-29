@@ -10,7 +10,11 @@
         <%= listing.game %>
       </div>
       <div class="col-md-4">
-        <%= link_to (number_to_currency(listing.price, precision: 2)), edit_listing_path(listing) %>
+        <button type="button" class="btn btn-edit">
+
+          <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> listing.price'.html_safe, edit_listing_path(listing) %></button>
+
+        <% link_to (number_to_currency(listing.price, precision: 2)), edit_listing_path(listing) %>
       </div>
     </div>
   </div>

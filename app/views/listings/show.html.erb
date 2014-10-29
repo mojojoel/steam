@@ -13,14 +13,11 @@
   </div>
 </div>
 
-<div align="center">
-<% if current_user == @listing.user or current_user.admin? %>
-<%= link_to 'Edit', edit_listing_path(@listing) %>
-|<% end %>
+<center>
+  <button type="button" class="btn btn-edit"><%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Back'.html_safe, listings_path %></button>
+  <% if current_user == @listing.user or current_user.admin? %>
+  <button type="button" class="btn btn-warning"><%= link_to '<span class="glyphicon glyphicon-list"></span> Edit'.html_safe, edit_listing_path(@listing) %></button>
+  <button type="button" class="btn btn-md btn-hover btn-danger"><%= link_to '<span class="glyphicon glyphicon-trash"></span> Destroy'.html_safe, @listing, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  <% end %>
+</center>
 
-<%= link_to 'Back', listings_path %>
-
-<% if current_user == @listing.user or current_user.admin? %>| 
-<%= link_to 'Destroy', @listing, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-</div>
