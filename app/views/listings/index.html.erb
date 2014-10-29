@@ -1,24 +1,22 @@
 <center><font size="8">Listings</font>
 
-  <%= link_to new_listing_path, class: "btn btn-default btn-xs" do %>
+  <%= link_to new_listing_path, class: "btn btn-sm" do %>
 <i class="glyphicon glyphicon-plus">New</i>
 <% end %>
-</center>
 
 <body>
-  <center>
-    <%= form_tag listings_path, remote: true, :method => 'get', :id => "listings_search" do %>
+    <%= form_tag listings_path, remote: true, :method => 'get', :id => "listings_search" do %><br>
       <p style="direction: rtl;">
         <%= text_field_tag :search, params[:search], :placeholder => "Search listings" %>
         <% submit_tag "Search", :name => nil, :id => "search_btn" %>
       </p>
     <% end %>
     <%= will_paginate @listings %>
-
   </center>
-  <div id="main-container" class="container-fluid">
-<div class="row" id="listings_search">
-<%= render partial: 'listings' %>
+
+<div id="main-container" class="container-fluid">
+  <div class="row" id="listings_search">
+  <%= render partial: 'listings' %>
 </div>
 
 </div>
