@@ -35,10 +35,12 @@
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
+  <% if current_user.admin? %>
   <div class="field">
     <%= f.label :approved %><br>
     <%= f.select :trust, ['true', 'false'] %>
   </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
