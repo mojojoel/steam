@@ -1,28 +1,38 @@
 <center><h1>Listings</h1></center>
 
 <body>
-    <div id="main-container" class="container-fluid">
+
+  <div id="main-container" class="container-fluid">
+    <div class="row">
+      <%= render 'listings' %>
+      <%= will_paginate @listings %>
+    </div>
+  </div>
+
+
+<!--     <div id="main-container" class="container-fluid">
       <div class="row">
         <div id="content" class="col-xs-offset-4 col-xs-4">
-
         <%= form_tag listings_path, remote: true, :method => 'get', :id => "listings_search" do %>
           <p>
             <%= text_field_tag :search, params[:search], :placeholder => "Item search" %>
             <%= submit_tag "Search", :name => nil, :id => "search_btn" %>
           </p>
-          <div id="listings"><%= render 'listings' %></div>
+          <div id="listings"><= render 'listings' %></div>
         <% end %>
         </div>
       </div>
-    </div>
+    </div> -->
+
+    
 
 <script>
 $("#search").keyup(function () {
      $.get($("#listings_search").attr("action"), $("#listings_search").serialize(), null, "script");
 }
-
   );
 </script>
+
 </body>
 <br>
 
