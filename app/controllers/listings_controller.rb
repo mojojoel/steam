@@ -32,7 +32,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
-    if current_user == @listing.user
+    if current_user == @listing.user or current_user.admin?
       @listing = Listing.find(params[:id])
     else redirect_to listings_path
     end

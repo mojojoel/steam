@@ -5,16 +5,22 @@
     <div class="row">
       <%= listing.name %>
     </div>
-    <div class="row">
+    <div class="row"><br>
       <div class="col-md-4 col-md-offset-2">
         <%= listing.game %>
       </div>
       <div class="col-md-4">
-        <button type="button" class="btn btn-edit">
 
-          <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> listing.price'.html_safe, edit_listing_path(listing) %></button>
+        <button type="button" class="btn btn-sm btn-edit">
+          <%= link_to edit_listing_path(listing) do %>
+            <span class="glyphicon glyphicon-shopping-cart"></span> <%= number_to_currency(listing.price, precision: 2) %>
+            <% if listing.approved? %>
+              <span class="glyphicon glyphicon-ok"></span>
+            <% end %>
 
-        <% link_to (number_to_currency(listing.price, precision: 2)), edit_listing_path(listing) %>
+          <% end %>
+        </button> 
+         
       </div>
     </div>
   </div>
