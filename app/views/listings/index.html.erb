@@ -1,12 +1,30 @@
-<center><h1>Listings</h1></center>
+<center><font size="8">Listings</font>
+
+  <%= link_to new_listing_path, class: "btn btn-default btn-xs" do %>
+<i class="glyphicon glyphicon-plus">New</i>
+<% end %>
+</center>
 
 <body>
+  <center>
+    <%= form_tag listings_path, remote: true, :method => 'get', :id => "listings_search" do %>
+      <p style="direction: rtl;">
+        <%= text_field_tag :search, params[:search], :placeholder => "Search listings" %>
+        <% submit_tag "Search", :name => nil, :id => "search_btn" %>
+      </p>
+    <% end %>
+    <%= will_paginate @listings %>
 
+  </center>
   <div id="main-container" class="container-fluid">
-    <div class="row">
-      <%= render 'listings' %>
-      <%= will_paginate @listings %>
-    </div>
+<div class="row" id="listings_search">
+<%= render partial: 'listings' %>
+</div>
+
+</div>
+
+ 
+ 
   </div>
 
 
@@ -18,13 +36,11 @@
             <%= text_field_tag :search, params[:search], :placeholder => "Item search" %>
             <%= submit_tag "Search", :name => nil, :id => "search_btn" %>
           </p>
-          <div id="listings"><= render 'listings' %></div>
+          <div id="listings">< render 'listings' %></div>
         <% end %>
         </div>
       </div>
     </div> -->
-
-    
 
 <script>
 $("#search").keyup(function () {
@@ -36,4 +52,4 @@ $("#search").keyup(function () {
 </body>
 <br>
 
-<%= link_to 'New Listing', new_listing_path %>
+

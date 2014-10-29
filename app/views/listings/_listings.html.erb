@@ -1,20 +1,38 @@
 <% @listings.each do |listing| %>
-<div class="col-md-4" id="listings">
-  <table class='table'>
-      <tr><td><%= link_to (image_tag listing.picture, size: '300', alt: listing.name), listing %></td></tr>
-        <tr align='center'><td><%= listing.name %></td></tr>
-        <tr align='center'><td><%= listing.game %></td></tr>
-<!--                   <td><%= listing.quality %></td>
-          <td><%= listing.desc %></td>
-          <td><%= link_to (image_tag listing.picture), listing %></td> -->
-        <tr align='center'><td><%= link_to (number_to_currency(listing.price, precision: 2)), edit_listing_path(listing) %></td></tr>
+<div class="col-md-4" id="listings" align="middle">
+  <div class="row">
+    <%= link_to image_tag(listing.picture, class: "img-responsive aspect"), listing %>
+    <div class="row">
+      <%= listing.name %>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
+        <%= listing.game %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to (number_to_currency(listing.price, precision: 2)), edit_listing_path(listing) %>
+      </div>
+    </div>
+  </div>
 
-<!--              <td><%= listing.user_id %></td>
-          <td><%= link_to 'Show', listing %></td>
-          <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-          <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-        <!-- </tr> -->
-    <!-- </tbody> -->
-  </table>
+
+  <!-- <table class='table'>
+    <tr><td><%= link_to (image_tag listing.picture, size: '300'), listing %></td></tr>
+    <tr align='center'><td><%= listing.name %></td></tr>
+    <tr align='center'><td><%= listing.game %></td></tr>
+    <tr align='center'><td><%= link_to (number_to_currency(listing.price, precision: 2)), edit_listing_path(listing) %></td></tr>
+  </table> -->
+
 </div>
 <% end %>
+
+
+
+
+
+<!--           <td>< link_to 'Show', listing %></td>
+          <td>< link_to 'Edit', edit_listing_path(listing) %></td>
+          <td>< link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    </tbody> -->
+ 

@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:home]
+  before_action :authenticate_user!, except: [:home, :index]
 
   respond_to :html,:js 
   def home
@@ -9,12 +9,12 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    if current_user.admin?
-        @listings = Listing.search(params[:search]).paginate(:page => params[:page], :per_page => 5).order('price DESC')
-    #   @listings = Listing.admin_view
+    if current_user == nil
+      @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).paginate(:page => params[:page], :per_page => 9).order('created_at')
+    elsif current_user.admin?
+      @listings = Listing.order('price DESC').search(params[:search]).paginate(:page => params[:page])
     else
-        @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).paginate(:page => params[:page], :per_page => 5).order('created_at')
-    #   @listings = Listing.user_view
+      @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).paginate(:page => params[:page], :per_page => 9).order('created_at')
     end
   end
 
