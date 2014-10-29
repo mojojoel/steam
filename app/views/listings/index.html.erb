@@ -7,15 +7,12 @@
 
         <%= form_tag listings_path, remote: true, :method => 'get', :id => "listings_search" do %>
           <p>
-            <%= text_field_tag :search, params[:search], :placeholder => "Item name" %>
+            <%= text_field_tag :search, params[:search], :placeholder => "Item search" %>
             <%= submit_tag "Search", :name => nil, :id => "search_btn" %>
           </p>
           <div id="listings"><%= render 'listings' %></div>
         <% end %>
-        
         </div>
-
-
       </div>
     </div>
 

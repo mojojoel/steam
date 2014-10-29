@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="http://www.journaldugeek.com/files/2013/06/rickroll.gif">SteamOutlet</a>
+      <a class="navbar-brand" href="#">SteamOutl.et</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,52 +27,22 @@
             <li><a href="#">Separated link</a></li>
             <li class="divider"></li>
             <li><a href="#">One more separated link</a></li> -->
-          </ul>
-        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-        <li class="dropdown">
+        <% if user_signed_in? %>
+          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><%= link_to '<span class="glyphicon glyphicon-cog"></span> Edit profile'.html_safe, edit_user_registration_path, :class => 'navbar-link' %></li>
-            <li class="divider"></li>
-            <li><%= link_to '<span class="glyphicon glyphicon-off"></span> Logout'.html_safe, destroy_user_session_path, method: :delete, :class => 'navbar-link'  %><li>
-                <% else %>
-                <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
-                <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-                  <% end %>
-
-
-          </ul>
-        </li>
+          <li><%= link_to '<span class="glyphicon glyphicon-cog"></span> Edit profile'.html_safe, edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li class="divider"></li>
+          <li><%= link_to '<span class="glyphicon glyphicon-off"></span> Logout'.html_safe, destroy_user_session_path, method: :delete, :class => 'navbar-link'  %><li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+          <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
-
-<!-- <nav class="navbar navbar-default" role="navigation">
-  <div class="collapse navbar-collapse">
-      <div class="btn-group">
-  <button type="button" class="btn btn-success">GO</button>
-  <button type="button" class="btn btn-warning">SLOW</button>
-  <button type="button" class="btn btn-danger">STOP</button>
-</div> -->
-    <!-- <ul class="nav navbar-nav">
-        <li><%= link_to 'Sexx', @sexx, class: 'btn btn-danger btn-xs' %></li>
-        <li><%= link_to 'New sexx', @sexx, class: 'btn btn-warning btn-xs' %></li>
-        <li><%= link_to 'Edit sexx', @sexx, class: 'btn btn-success btn-xs' %></li>
-    </ul> -->
-
-<!--     <div class="navbar-text pull-right">
-    <% if user_signed_in? %>
-    <strong><%= current_user.email %></strong>.
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
-    </div> -->

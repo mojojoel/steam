@@ -3,9 +3,6 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-
   <div><%= f.label :steam_id %><br />
   <%= f.text_field :steam_id %></div>
 
@@ -26,6 +23,10 @@
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
   <% if current_user.admin? %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
   <div><%= f.label :comments %><br />
   <%= f.text_area :comments %></div>
 

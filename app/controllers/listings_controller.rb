@@ -13,7 +13,7 @@ class ListingsController < ApplicationController
         @listings = Listing.search(params[:search]).paginate(:page => params[:page], :per_page => 5).order('price DESC')
     #   @listings = Listing.admin_view
     else
-        @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).paginate(:page => params[:page], :per_page => 2).order('name')
+        @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).paginate(:page => params[:page], :per_page => 5).order('created_at')
     #   @listings = Listing.user_view
     end
   end
