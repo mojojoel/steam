@@ -3,14 +3,12 @@
     <div class="btn-success"><h2><%= @listing.name %></h2></div>
     <div class="col-md-4"><%= image_tag @listing.picture %>
     </div>
-    <div class="col-md 6" style="vertical-align:middle"><br><br><br><br>
+    <div class="col-md 6" style="vertical-align:middle"><br><br><br><br><br>
       <div><strong>Game:</strong> <%= @listing.game %></div>
       <div><strong>Quality:</strong> <%= @listing.quality %></div>
       <div><strong>Desc:</strong> <%= @listing.desc %></div>
       <div><strong>Price:</strong> <%= number_to_currency(@listing.price, precision: 2) %></div>
       <div><strong>Seller:</strong> <%= @listing.user.nickname %></div>
-    </div>
-    <dif class="col-md-1">
     </div>
   </div>
 </div>

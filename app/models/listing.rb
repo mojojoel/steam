@@ -21,4 +21,8 @@ class Listing < ActiveRecord::Base
     		all
   		end
 	end
+
+	# def self.owned
+	# 	Listing.where('user_id = current_user.id')
+	# end
 end
