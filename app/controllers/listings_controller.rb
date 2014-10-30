@@ -10,13 +10,13 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     if current_user == nil
-      @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).paginate(:page => params[:page], :per_page => 9).order('created_at')
+      @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).paginate(:page => params[:page], :per_page => 9).order('created_at DESC')
     elsif current_user.admin?
       @listings = Listing.order('price DESC').search(params[:search]).paginate(:page => params[:page])
     elsif (params[:own]) == "true"
       @listings = Listing.where(:user => current_user).paginate(:page => params[:page])
     else
-      @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).paginate(:page => params[:page], :per_page => 9).order('created_at')
+      @listings = Listing.where('price < 200.00 or approved = true').search(params[:search]).order('created_at DESC').paginate(:page => params[:page], :per_page => 9)
     end
   end
 
