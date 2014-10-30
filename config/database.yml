@@ -32,4 +32,4 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
-  database: steam_development
+  database: steam_production
