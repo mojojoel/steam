@@ -49,5 +49,5 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
-#Heroku bundler
-gem 'bundler'
+#For Heroku
+gem 'rails_12factor', group: :production
