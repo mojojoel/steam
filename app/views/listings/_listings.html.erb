@@ -11,27 +11,18 @@
       </div>
       <div class="col-md-4">
 
-        <button type="button" class="btn btn-sm btn-edit">
-          <%= link_to edit_listing_path(listing) do %>
-            <span class="glyphicon glyphicon-shopping-cart"></span> <%= number_to_currency(listing.price, precision: 2) %>
-            <% if listing.approved? %>
+        <%= link_to edit_listing_path(listing), class: "btn btn-sm btn-info" do %>
+          <i class="glyphicon glyphicon-shopping-cart"><%= number_to_currency(listing.price, precision: 2) %>
+          <% if listing.approved? %>
               <span class="glyphicon glyphicon-ok"></span>
-            <% end %>
-
-          <% end %>
-        </button> 
-         
+            <% end %></i>
+        <% end %>
       </div>
     </div>
   </div>
 
 
-  <!-- <table class='table'>
-    <tr><td><%= link_to (image_tag listing.picture, size: '300'), listing %></td></tr>
-    <tr align='center'><td><%= listing.name %></td></tr>
-    <tr align='center'><td><%= listing.game %></td></tr>
-    <tr align='center'><td><%= link_to (number_to_currency(listing.price, precision: 2)), edit_listing_path(listing) %></td></tr>
-  </table> -->
+
 
 </div>
 <% end %>
@@ -39,10 +30,3 @@
 
 
 
-
-<!--           <td>< link_to 'Show', listing %></td>
-          <td>< link_to 'Edit', edit_listing_path(listing) %></td>
-          <td>< link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-    </tbody> -->
- 
