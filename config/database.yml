@@ -27,6 +27,8 @@
 development:
   adapter: postgresql
   database: steam_development
+  username: postgres
+  password: Karnival
   host: localhost
 
 production:

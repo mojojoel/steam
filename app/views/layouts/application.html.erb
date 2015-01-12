@@ -2,13 +2,14 @@
 <html>
 <head>
   <title>Steam</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= render 'layouts/navigation' %>
+
 <center>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -17,9 +18,6 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 </center>
-
-<!-- <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p> -->
 
 <%= yield %>
 

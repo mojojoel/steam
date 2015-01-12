@@ -26,18 +26,6 @@ Listing.create!(name: 'Genuine Hwytty & Shyzzyrd', quality: 'Mythical', desc: "'
 Listing.create!(name: 'Genuine Shagbark the Plush', quality: 'Legendary', desc: "Shagbark is a trusty forest familiar who lives for the thrill of delivery. Fond of secrets and artifacts, he hopes you'll never finish farming.", picture: 'http://steamcommunity-a.akamaihd.net/economy/image/W_I_5GLm4wPcv9jJQ7z7tz_l_0sEIYUhRfbF4arNQkgGQGKd3kMuVpMgCwRZrhyFY1OZ0v4CeevbBQw4CJOwVUy8M6-M1EKeV9FVfdErPzlNiNG8gUxBACGEUeRFDIZ4tMvD2wvvDQfAKDc0nYVSgaDL0s-ACriQ90Xx_MFAHQ/360fx360f', game: 'Dota 2', price: '38', user_id: '3')
 Listing.create!(name: 'Dragonclaw Hook', quality: 'Immortal', desc: "Sithil's Summer Stash 2012. The claw from a black dragon's left toe. The only piece of the beast that survived an encounter with Pudge's voracious hunger.", picture: 'http://steamcommunity-a.akamaihd.net/economy/image/W_I_5GLm4wPcv9jJQ7z7tz_l_0sEIYUhRfbF4arNQkgGQGKd3kMuVpMgCwRZrg-fckaVmPxYbuTfPR0yH5T6UkuzC6WCyUKeWd9DY-tpOH0e2ce-jxtEBiODAOBACoQsupvBhwvtWADFejZuzI5VgPTNhZLdXKHZ_BC0bkMuhAcDY6l_/360fx360f', game: 'Dota 2', price: '194', user_id: '4')
 Listing.create!(name: 'Treasure Key', quality: 'Common', desc: 'Used to open locked Treasure Chests. Double click or right-click the key in your backpack and select the chest you want to open.', picture: 'http://steamcommunity-a.akamaihd.net/economy/image/W_I_5GLm4wPcv9jJQ7z7tz_l_0sEIYUhRfbF4arNQkgGQGKd3kMuVo47AQVZrguYc0CDwv5IVeDSBx0tJZP6X3uxNb-Kwwf0WNMUeYExYGtLiYvqjxsbBXSCVuRCDtF4uZqR1wnqCQKTe2A6yd9QnLOQ19r5vY6F/360fx360f', game: 'Dota 2', price: '250', user_id: '5', approved: 'true')
-Listing.create!(name: 'Festive Black Box', quality: 'Limited Level', desc: 'On Hit: +15 health
--25% clip size
- 
-The Tank Buster
- 
-The Black Box
-The Battalion's Backup
-Grenadier's Softcap
- 
-Item Set Bonus:
-Leave a Calling Card on your victims.
-Item Wiki Page...', picture: 'http://steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEIUwUdXBjpujdbt9DrDOGzBOESnN974cBWiTM7wQAoMbbgaWVmIFDDA6UIWaA4owzuWHc2usNgBdbuobkDfhKv6tWyNMJ28A/360fx360f', game: 'Team Fortress 2', price: '5', user_id: '3')
 Listing.create!(name: 'Festive Knife', quality: 'Limited Level', desc: '', picture: 'http://steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgETYRQuVhXrvj18hMn0CvfCWrECy9gw4JEE3G4zlVYuZuLtNDNhIAKSWPkPCfc-p1nvD3Mx7cEzBZmm-bzJm5SK8A/360fx360f', game: 'Team Fortress 2', price: '7', user_id: '2')
 Listing.create!(name: 'Festive Wrench', quality: 'Limited Level', desc: '', picture: 'http://steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgETYRQuSgnntjtLt8TnH_WJRrEGw4lsvcZU2DRvxFctNrTmM2Q1KgeTVfEKBKNp8gy7D3RiusJnV9T457UB3dGTWNg/360fx360f', game: 'Team Fortress 2', price: '3', user_id: '4')
 Listing.create!(name: 'The Festive Sandvich', quality: 'Limited Level', desc: '', picture: 'http://steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEIUxQQUx_1sTtLt9DrDOGzBOESnN974cNTiTU5yQQiYrLmNm5mdlaRVvEHCa1qoFDtCnQ07MIwA9Tv9ugAeRKv6tXYfmyLIg/360fx360f', game: 'Team Fortress 2', price: '9.9', user_id: '6')
